@@ -7,9 +7,13 @@ int main() {
 
     number = 5;
     while(1) {
+        number--;
+        
+        if (number == 3)
+            continue;
+        
         printf("%d\n", number);
         sleep(1);
-        number--;
 
         if (number < 1) {
             break;

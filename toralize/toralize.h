@@ -9,8 +9,11 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
-#define LOCALHOST_IP    "127.0.0.1"
+#define LOCALHOST_IP    "127.0.0.1" //
 #define TORALIZE_PORT   9050
+#define USERNAME		"toralize_user"
+#define request_size    sizeof(struct toralize_request)
+#define response_size   sizeof(struct toralize_response) 
 
 // typedef unsigned char int8;
 // typedef unsigned short int16;
@@ -30,7 +33,7 @@ struct toralize_request {
 	uint8_t cd;
 	uint16_t dstport;
 	uint32_t dstip;
-	unsigned char userid[8];
+	unsigned char userid[16];
 };
 
 typedef struct toralize_request Req;
@@ -53,3 +56,6 @@ typedef struct toralize_request Req;
 };
 
 typedef struct toralize_response Res;
+
+Req *create_request(const char *, int);
+int main(int, char **);

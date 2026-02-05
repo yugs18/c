@@ -54,3 +54,18 @@ A command-line implementation of the Wordle game written in C. The program selec
 - Game loop and input validation
 
 ---
+
+### Toralize (SOCKS4 Tor Redirector)
+
+A Linux shared library written in C that transparently routes outbound TCP connections through the Tor network by intercepting the connect() system call using LD_PRELOAD. The project implements the SOCKS4 protocol and redirects traffic without modifying the target application’s source code.
+
+**Main Points:**
+- Uses LD_PRELOAD to hijack the libc connect() function
+- Implements the SOCKS4 CONNECT handshake
+- Redirects traffic through Tor’s SOCKS proxy (127.0.0.1:9050)
+- Employs dynamic linking (dlsym, RTLD_NEXT) to call the real connect()
+- Uses dup2() to seamlessly replace the original socket
+- Demonstrates low-level networking, proxy protocols, and runtime function interposition
+- Highlights limitations of SOCKS4 with modern HTTPS and DNS resolution
+
+---

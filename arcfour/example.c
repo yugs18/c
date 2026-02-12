@@ -1,12 +1,13 @@
+/* example.c */
 #include "arcfour.h"
 
 #define F fflush(stderr)
 
 int main(void);
 
-void printbin(int8 *input, const int16 size) {
-    int16 i;
-    int8 *p;
+void printbin(uint8_t *input, const uint16_t size) {
+    uint16_t i;
+    uint8_t *p;
 
     assert(size > 0);
 
@@ -23,7 +24,7 @@ void printbin(int8 *input, const int16 size) {
 
 int main() {
     // Arcfour *rc4;
-    int16 skey, stext;
+    uint16_t skey, stext;
     char *key, *from, *encrypted, *decrypted;
 
     key = from = encrypted = decrypted = 0;
@@ -41,7 +42,7 @@ int main() {
     printf("'%s'\n ->", from);
     // encrypted = rc4encrypt(from, stext);
 
-    printbin((int8 *)key, skey);
+    printbin((uint8_t *)key, skey);
 
     return 0;
 }

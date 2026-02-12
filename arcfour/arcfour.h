@@ -1,7 +1,9 @@
+/* arcfour.h */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
 #include <assert.h>
 #include <errno.h>
 
@@ -12,10 +14,6 @@ struct s_arcfour {
 };
 typedef struct s_arcfour Arcfour;
 
-typedef unsigned char int8;
-typedef unsigned short int int16;
-typedef unsigned int int32;
-
-Arcfour *rc4init(int8 *, int16);
-int8 rc4byte(void);
-int8 *rc4encryt(int8 *, int16);
+Arcfour *rc4init(uint8_t *, uint16_t);
+uint8_t rc4byte(void);
+uint8_t *rc4encryt(uint8_t *, uint16_t);

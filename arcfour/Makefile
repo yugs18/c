@@ -39,8 +39,8 @@ all: example arcfour.so
 # Depends on: example.o
 # Meaning:
 #   If example.o changes, rebuild example.
-example: example.o
-	$(CC) example.o -o example $(CFLAGS)
+example: example.o arcfour.o
+	$(CC) example.o arcfour.o -o example $(CFLAGS)
 
 # Compile example.c into object file example.o
 # -c  → Compile only (do not link)

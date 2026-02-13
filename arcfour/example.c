@@ -23,26 +23,26 @@ void printbin(uint8_t *input, const uint16_t size) {
 }
 
 int main() {
-    // Arcfour *rc4;
+    Arcfour *rc4;
     uint16_t skey, stext;
     char *key, *from, *encrypted, *decrypted;
 
     key = from = encrypted = decrypted = 0;
     skey = stext = 0;
 
-    key = "tomatoes"; // 8 BITS -> 2048 BITS
+    key = "tomatoes";
     skey = strlen(key);
     from = "Shall I compare thee to a summer's day?";
     stext = strlen(from);
 
     printf("Initializing encryption...\n"); F;
-    // rc4 = recinit(key ,skey);
+    rc4 = rc4init((uint8_t *)key ,skey);
     printf("done\n");
 
     printf("'%s'\n ->", from);
     // encrypted = rc4encrypt(from, stext);
 
-    printbin((uint8_t *)key, skey);
+    printbin(rc4 -> s, 256);
 
     return 0;
 }
